@@ -1,0 +1,5 @@
+To set up the welcome message to appear every time you start a new Zsh session, please run the following command:
+
+echo "~/.local/bin/zsh_welcome.sh" >> ~/.zshrc
+
+This will add the script to your .zshrc file so it runs automatically when you start a new terminal session.
