@@ -2,8 +2,8 @@
 
 A personalized welcome message for Zsh terminal sessions that displays the current date/time and available CLI AI agents.
 
-![GitHub](https://img.shields.io/github/license/your-username/zsh-ai-agent-welcome-message)
-![GitHub last commit](https://img.shields.io/github/last-commit/your-username/zsh-ai-agent-welcome-message)
+![GitHub](https://img.shields.io/github/license/kevinmhk/zsh-ai-agent-welcome-message)
+![GitHub last commit](https://img.shields.io/github/last-commit/kevinmhk/zsh-ai-agent-welcome-message)
 
 ## Features
 
@@ -17,11 +17,13 @@ A personalized welcome message for Zsh terminal sessions that displays the curre
 - Color-coded output optimized for dark theme terminals
 - Non-intrusive and informative
 
+<!--
 ## Preview
 
 ![Welcome Message Preview](https://placehold.co/600x200?text=Welcome+Message+Preview+Image)
 
 *Note: Replace the placeholder above with an actual screenshot of the welcome message.*
+-->
 
 ## Installation
 
@@ -82,8 +84,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
+<!--
 ## Contact
 
 Your Name - [@your_twitter](https://twitter.com/your_twitter) - your-email@example.com
 
-Project Link: [https://github.com/your-username/zsh-ai-agent-welcome-message](https://github.com/your-username/zsh-ai-agent-welcome-message)
+Project Link: [https://github.com/kevinmhk/zsh-ai-agent-welcome-message](https://github.com/kevinmhk/zsh-ai-agent-welcome-message)
+-->
