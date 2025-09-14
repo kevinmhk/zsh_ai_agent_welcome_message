@@ -7,6 +7,7 @@ CYAN='\033[38;5;51m'      # Bright cyan
 MAGENTA='\033[38;5;201m'  # Bright magenta
 YELLOW='\033[38;5;226m'   # Bright yellow
 ORANGE='\033[38;5;208m'   # Orange
+PURPLE='\033[38;5;129m'   # Purple
 RESET='\033[0m'           # Reset to default color
 
 # Display welcome message with current date and time
@@ -21,6 +22,10 @@ which claude >/dev/null 2>&1 && agents+=("claude")
 which codex >/dev/null 2>&1 && agents+=("codex")
 which gemini >/dev/null 2>&1 && agents+=("gemini")
 which qwen >/dev/null 2>&1 && agents+=("qwen")
+which opencode >/dev/null 2>&1 && agents+=("opencode")
+
+# Sort agents alphabetically
+IFS=$'\n' agents=($(sort <<<"${agents[*]}"))
 
 # Display agents section only if at least one agent is found
 if [ ${#agents[@]} -gt 0 ]; then
@@ -32,6 +37,7 @@ if [ ${#agents[@]} -gt 0 ]; then
             "claude")    echo "${MAGENTA}- $agent${RESET}" ;;
             "codex")     echo "${YELLOW}- $agent${RESET}" ;;
             "gemini")    echo "${ORANGE}- $agent${RESET}" ;;
+            "opencode")  echo "${PURPLE}- $agent${RESET}" ;;
             "qwen")      echo "${BLUE}- $agent${RESET}" ;;
             *)           echo "${CYAN}- $agent${RESET}" ;;
         esac
