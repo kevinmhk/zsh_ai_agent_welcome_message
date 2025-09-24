@@ -13,6 +13,8 @@ A personalized welcome message for Zsh terminal sessions that displays the curre
   - Claude
   - Codex
   - Gemini
+  - Opencode
+  - Q
   - Qwen
 - Color-coded output optimized for dark theme terminals
 - Non-intrusive and informative
