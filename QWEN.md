@@ -46,6 +46,8 @@ The welcome script (`zsh_welcome.sh`) performs the following actions:
    - claude
    - codex
    - gemini
+   - opencode
+   - q
    - qwen
 3. Lists any found AI agents with color-coded names
 4. Uses enhanced color codes optimized for dark theme terminals
