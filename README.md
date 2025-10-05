@@ -12,11 +12,13 @@ A personalized welcome message for Zsh terminal sessions that displays the curre
   - Aider
   - Claude
   - Codex
+  - Droid
   - Gemini
   - Opencode
   - Q
   - Qwen
 - Color-coded output optimized for dark theme terminals
+- Alphabetically sorted agent list for quick scanning
 - Non-intrusive and informative
 
 <!--
@@ -31,7 +33,7 @@ A personalized welcome message for Zsh terminal sessions that displays the curre
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/zsh-ai-agent-welcome-message.git
+   git clone https://github.com/kevinmhk/zsh-ai-agent-welcome-message.git
    ```
 
 2. Copy the script to a convenient location:
@@ -62,6 +64,9 @@ CYAN='\033[38;5;51m'      # Bright cyan
 MAGENTA='\033[38;5;201m'  # Bright magenta
 YELLOW='\033[38;5;226m'   # Bright yellow
 ORANGE='\033[38;5;208m'   # Orange
+PURPLE='\033[38;5;129m'   # Purple
+RED='\033[38;5;196m'      # Bright red
+TEAL='\033[38;5;44m'      # Teal
 RESET='\033[0m'           # Reset to default color
 ```
 
