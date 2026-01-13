@@ -34,19 +34,21 @@ IFS=$'\n' agents=($(sort <<<"${agents[*]}"))
 # Display agents section only if at least one agent is found
 if [ ${#agents[@]} -gt 0 ]; then
     echo "${CYAN}May I remind you this box has the following CLI AI agents installed to assist you:${RESET}"
+    colored_agents=()
     for agent in "${agents[@]}"; do
         # Color each agent name differently for visual appeal
         case $agent in
-            "aider")     echo "${GREEN}- $agent${RESET}" ;;
-            "claude")    echo "${MAGENTA}- $agent${RESET}" ;;
-            "codex")     echo "${YELLOW}- $agent${RESET}" ;;
-            "droid")     echo "${TEAL}- $agent${RESET}" ;;
-            "gemini")    echo "${ORANGE}- $agent${RESET}" ;;
-            "opencode")  echo "${PURPLE}- $agent${RESET}" ;;
-            "q")         echo "${RED}- $agent${RESET}" ;;
-            "qwen")      echo "${BLUE}- $agent${RESET}" ;;
-            *)           echo "${CYAN}- $agent${RESET}" ;;
+            "aider")     colored_agents+=("${GREEN}- ${agent}${RESET}") ;;
+            "claude")    colored_agents+=("${MAGENTA}- ${agent}${RESET}") ;;
+            "codex")     colored_agents+=("${YELLOW}- ${agent}${RESET}") ;;
+            "droid")     colored_agents+=("${TEAL}- ${agent}${RESET}") ;;
+            "gemini")    colored_agents+=("${ORANGE}- ${agent}${RESET}") ;;
+            "opencode")  colored_agents+=("${PURPLE}- ${agent}${RESET}") ;;
+            "q")         colored_agents+=("${RED}- ${agent}${RESET}") ;;
+            "qwen")      colored_agents+=("${BLUE}- ${agent}${RESET}") ;;
+            *)           colored_agents+=("${CYAN}- ${agent}${RESET}") ;;
         esac
     done
+    printf "%b\n" "${(j: :)colored_agents}"
 fi
 echo ""
