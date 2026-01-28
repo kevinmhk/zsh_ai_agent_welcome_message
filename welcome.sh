@@ -10,6 +10,7 @@ ORANGE='\033[38;5;208m'   # Orange
 PURPLE='\033[38;5;129m'   # Purple
 RED='\033[38;5;196m'      # Bright red
 TEAL='\033[38;5;44m'      # Teal
+SILVER='\033[38;5;244m'   # Silver
 RESET='\033[0m'           # Reset to default color
 
 # Display welcome message with current date and time
@@ -25,6 +26,7 @@ which codex >/dev/null 2>&1 && agents+=("codex")
 which droid >/dev/null 2>&1 && agents+=("droid")
 which gemini >/dev/null 2>&1 && agents+=("gemini")
 which opencode >/dev/null 2>&1 && agents+=("opencode")
+which pi >/dev/null 2>&1 && agents+=("pi")
 which q >/dev/null 2>&1 && agents+=("q")
 which qwen >/dev/null 2>&1 && agents+=("qwen")
 
@@ -44,6 +46,7 @@ if [ ${#agents[@]} -gt 0 ]; then
             "droid")     colored_agents+=("${TEAL}- ${agent}${RESET}") ;;
             "gemini")    colored_agents+=("${ORANGE}- ${agent}${RESET}") ;;
             "opencode")  colored_agents+=("${PURPLE}- ${agent}${RESET}") ;;
+            "pi")        colored_agents+=("${SILVER}- ${agent}${RESET}") ;;
             "q")         colored_agents+=("${RED}- ${agent}${RESET}") ;;
             "qwen")      colored_agents+=("${BLUE}- ${agent}${RESET}") ;;
             *)           colored_agents+=("${CYAN}- ${agent}${RESET}") ;;

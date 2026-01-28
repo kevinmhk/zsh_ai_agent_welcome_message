@@ -15,10 +15,12 @@ A personalized welcome message for Zsh terminal sessions that displays the curre
   - Droid
   - Gemini
   - Opencode
+  - Pi
   - Q
   - Qwen
 - Color-coded output optimized for dark theme terminals
 - Alphabetically sorted agent list for quick scanning
+- Single-line agent list to reduce vertical screen usage
 - Non-intrusive and informative
 
 <!--
@@ -67,6 +69,7 @@ ORANGE='\033[38;5;208m'   # Orange
 PURPLE='\033[38;5;129m'   # Purple
 RED='\033[38;5;196m'      # Bright red
 TEAL='\033[38;5;44m'      # Teal
+SILVER='\033[38;5;244m'   # Silver
 RESET='\033[0m'           # Reset to default color
 ```
 
