@@ -2,9 +2,6 @@
 
 A personalized welcome message for Zsh terminal sessions that displays the current date/time and available CLI AI agents.
 
-![GitHub](https://img.shields.io/github/license/kevinmhk/zsh-ai-agent-welcome-message)
-![GitHub last commit](https://img.shields.io/github/last-commit/kevinmhk/zsh-ai-agent-welcome-message)
-
 ## Features
 
 - Personalized greeting with current date and time
