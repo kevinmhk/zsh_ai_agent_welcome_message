@@ -1,17 +1,18 @@
 #!/bin/zsh
 
 # Define color codes for better visibility on dark themes
-BLUE='\033[38;5;39m'      # Bright blue
-GREEN='\033[38;5;46m'     # Bright green
-CYAN='\033[38;5;51m'      # Bright cyan
-MAGENTA='\033[38;5;201m'  # Bright magenta
-YELLOW='\033[38;5;226m'   # Bright yellow
-ORANGE='\033[38;5;208m'   # Orange
-PURPLE='\033[38;5;129m'   # Purple
-RED='\033[38;5;196m'      # Bright red
-TEAL='\033[38;5;44m'      # Teal
-SILVER='\033[38;5;244m'   # Silver
-RESET='\033[0m'           # Reset to default color
+# Using 256-color palette with harmonious, distinct colors
+GREEN='\033[38;5;77m'       # Medium green (aider)
+GREEN_2='\033[38;5;46m'     # Bright green (gemini)
+CYAN='\033[38;5;51m'        # Bright cyan (claude)
+WHITE='\033[38;5;231m'      # Pure white (codex)
+VIOLET='\033[38;5;171m'     # Violet/purple (qwen)
+ORANGE='\033[38;5;208m'     # Orange (droid)
+YELLOW='\033[38;5;226m'     # Bright yellow (opencode)
+TEAL='\033[38;5;44m'        # Teal (pi)
+BLUE='\033[38;5;75m'        # Soft blue (q)
+SILVER='\033[38;5;244m'     # Grey (pi)
+RESET='\033[0m'             # Reset to default color
 
 # Display welcome message with current date and time
 echo ""
@@ -38,18 +39,18 @@ if [ ${#agents[@]} -gt 0 ]; then
     echo "${CYAN}May I remind you this box has the following CLI AI agents installed to assist you:${RESET}"
     colored_agents=()
     for agent in "${agents[@]}"; do
-        # Color each agent name differently for visual appeal
+        # Color each agent name with their branding colors
         case $agent in
-            "aider")     colored_agents+=("${GREEN}- ${agent}${RESET}") ;;
-            "claude")    colored_agents+=("${MAGENTA}- ${agent}${RESET}") ;;
-            "codex")     colored_agents+=("${YELLOW}- ${agent}${RESET}") ;;
-            "droid")     colored_agents+=("${TEAL}- ${agent}${RESET}") ;;
-            "gemini")    colored_agents+=("${ORANGE}- ${agent}${RESET}") ;;
-            "opencode")  colored_agents+=("${PURPLE}- ${agent}${RESET}") ;;
-            "pi")        colored_agents+=("${SILVER}- ${agent}${RESET}") ;;
-            "q")         colored_agents+=("${RED}- ${agent}${RESET}") ;;
-            "qwen")      colored_agents+=("${BLUE}- ${agent}${RESET}") ;;
-            *)           colored_agents+=("${CYAN}- ${agent}${RESET}") ;;
+            "aider")     colored_agents+=("${GREEN}- ${agent}${RESET}") ;;      # Green
+            "claude")    colored_agents+=("${ORANGE}- ${agent}${RESET}") ;;     # Orange
+            "codex")     colored_agents+=("${WHITE}- ${agent}${RESET}") ;;      # White
+            "droid")     colored_agents+=("${TEAL}- ${agent}${RESET}") ;;       # Teal
+            "gemini")    colored_agents+=("${GREEN_2}- ${agent}${RESET}") ;;    # Medium green
+            "opencode")  colored_agents+=("${YELLOW}- ${agent}${RESET}") ;;     # Yellow 226
+            "pi")        colored_agents+=("${SILVER}- ${agent}${RESET}") ;;     # Grey
+            "q")         colored_agents+=("${BLUE}- ${agent}${RESET}") ;;       # Soft blue
+            "qwen")      colored_agents+=("${VIOLET}- ${agent}${RESET}") ;;     # Violet
+            *)           colored_agents+=("${CYAN}- ${agent}${RESET}") ;;       # Cyan (fallback)
         esac
     done
     printf "%b\n" "${(j: :)colored_agents}"
