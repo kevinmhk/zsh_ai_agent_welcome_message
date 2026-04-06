@@ -1,100 +1,63 @@
 # Zsh AI Agent Welcome Message
 
-A personalized welcome message for Zsh terminal sessions that displays the current date/time and available CLI AI agents.
+A small Zsh welcome-message project that prints a timestamped greeting and a colorized list of detected CLI AI agents when a new shell session starts.
 
-## Features
+## Overview
 
-- Personalized greeting with current date and time
-- Automatic detection of installed CLI AI agents:
-  - Aider
-  - Claude
-  - Codex
-  - Droid
-  - Gemini
-  - Opencode
-  - Pi
-  - Q
-  - Qwen
-- Color-coded output optimized for dark theme terminals
-- Alphabetically sorted agent list for quick scanning
-- Single-line agent list to reduce vertical screen usage
-- Non-intrusive and informative
+The repository contains two welcome scripts and one installer:
 
-<!--
-## Preview
+- `scripts/zsh_welcome.sh`: primary Zsh welcome script
+- `scripts/welcome.sh`: fallback welcome script
+- `scripts/install.sh`: installer that copies both scripts into `~/.local/bin` and updates `~/.zshrc`
 
-![Welcome Message Preview](https://placehold.co/600x200?text=Welcome+Message+Preview+Image)
+The welcome scripts currently check for these agent CLIs when present on `PATH`:
 
-*Note: Replace the placeholder above with an actual screenshot of the welcome message.*
--->
+- `aider`
+- `claude`
+- `codex`
+- `droid`
+- `gemini`
+- `opencode`
+- `pi`
+- `q`
+- `qwen`
 
-## Installation
+## Install
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/kevinmhk/zsh-ai-agent-welcome-message.git
-   ```
+```bash
+git clone https://github.com/kevinmhk/zsh-ai-agent-welcome-message.git
+cd zsh-ai-agent-welcome-message
+./scripts/install.sh
+source ~/.zshrc
+```
 
-2. Copy the script to a convenient location:
-   ```bash
-   mkdir -p ~/.local/bin
-   cp zsh_welcome.sh ~/.local/bin/
-   chmod +x ~/.local/bin/zsh_welcome.sh
-   ```
+The installer is idempotent. It rewrites a managed block in `~/.zshrc` so repeated runs do not append duplicate startup lines.
 
-3. Add the script to your `.zshrc` file:
-   ```bash
-   echo "~/.local/bin/zsh_welcome.sh" >> ~/.zshrc
-   ```
+## Usage
 
-4. Restart your terminal or run:
-   ```bash
-   source ~/.zshrc
-   ```
+Open a new Zsh session after installation. The managed startup block will:
+
+1. Run `~/.local/bin/zsh_welcome.sh` when available.
+2. Fall back to `~/.local/bin/welcome.sh` if the primary script is missing.
+
+You can also run either script directly:
+
+```bash
+~/.local/bin/zsh_welcome.sh
+~/.local/bin/welcome.sh
+```
 
 ## Customization
 
-You can customize the colors by modifying the color code variables at the top of the script:
+Edit `scripts/zsh_welcome.sh` and `scripts/welcome.sh` if you want to change:
 
-```bash
-BLUE='\033[38;5;39m'      # Bright blue
-GREEN='\033[38;5;46m'     # Bright green
-CYAN='\033[38;5;51m'      # Bright cyan
-MAGENTA='\033[38;5;201m'  # Bright magenta
-YELLOW='\033[38;5;226m'   # Bright yellow
-ORANGE='\033[38;5;208m'   # Orange
-PURPLE='\033[38;5;129m'   # Purple
-RED='\033[38;5;196m'      # Bright red
-TEAL='\033[38;5;44m'      # Teal
-SILVER='\033[38;5;244m'   # Silver
-RESET='\033[0m'           # Reset to default color
-```
+- greeting text
+- detected agent command names
+- ANSI color assignments
+- output layout
 
-## Future Improvements
-
-See [future_improvement.md](future_improvement.md) for planned enhancements, including:
-- Message of the Day (MOTD) feature to limit display frequency
-- File-based timestamp tracking
-- Zsh hooks implementation
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+After editing, rerun `./scripts/install.sh` to copy the updated scripts into `~/.local/bin`.
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
-
-<!--
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - your-email@example.com
-
-Project Link: [https://github.com/kevinmhk/zsh-ai-agent-welcome-message](https://github.com/kevinmhk/zsh-ai-agent-welcome-message)
--->
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
